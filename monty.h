@@ -54,5 +54,6 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
+void is_valid(char **token, stack_t **stack);
 
 #endif
