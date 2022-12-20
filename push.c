@@ -7,31 +7,28 @@
  *
  * Return: void
  */
-void push(stack_t **stack, unsigned int line_cnt)
+void push(stack_t **stack, unsigned int n)
 {
-	char *n = global.argument;
+	stack_t *node = NULL;
+	(void) n;
 
-	if ((is_digit(n)) == 0)
+	node = malloc(sizeof(stack_t));
+	if (!node)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
-		status = EXIT_FAILURE;
-		return;
+		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(stack);
+		exit(EXIT_FAILURE);
 	}
 
-	if (global.data_struct == 1)
-	{
-		if (!add_node(stack, atoi(global.argument)))
-		{
-			return;
-			status = EXIT_FAILURE;
-		}
-	}
+	node->prev = node->next = NULL;
+
+	if (!(*stack))
+		(*stack) = node;
 	else
 	{
-		if (!queue_node(stack, atoi(global.argument)))
-		{
-			return;
-			status = EXIT_FAILURE;
-		}
+		(*stack)->prev = node;
+		node->next = *stack;
+		*stack = node;
 	}
 }
+
