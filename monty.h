@@ -75,7 +75,7 @@ int isnumber(char *str);
 
 stack_t *add_node(stack_t **stack, const int n);
 stack_t *queue_node(stack_t **stack, const int n);
-void free_stack(stack_t *stack);
+void free_stack(stack_t **stack);
 size_t print_stack(const stack_t *stack);
 stack_t *build_list(stack_t *head);
 void call(char **tokens, stack_t **stack);
