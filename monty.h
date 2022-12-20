@@ -62,7 +62,7 @@ help global;
 
 extern int status;
 
-void push(stack_t **stack, unsigned int line_cnt);
+void push(stack_t **stack, unsigned int n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int n);
 void swap(stack_t **stack, unsigned int line_number);
