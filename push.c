@@ -1,13 +1,11 @@
 #include "monty.h"
 
 /**
- * push - push element into the stack
- * @stack: stack given by main
- * @line_cnt: ammount of lines
- *
- * Return: void
+ * _push - pushes a node to a stack
+ * @stack: head of the stack
+ * @n: line number
  */
-void push(stack_t **stack, unsigned int n)
+void _push(stack_t **stack, unsigned int n)
 {
 	stack_t *node = NULL;
 	(void) n;
@@ -16,6 +14,7 @@ void push(stack_t **stack, unsigned int n)
 	if (!node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 
@@ -30,4 +29,3 @@ void push(stack_t **stack, unsigned int n)
 		*stack = node;
 	}
 }
-

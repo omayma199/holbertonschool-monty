@@ -1,4 +1,23 @@
 #include "monty.h"
+
+static instruction_t ops[] = {
+		{"push", _push},
+		{"pall", _pall},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", NULL},
+		{"pint", _pint},
+		{"mul", _mul},
+		{"div", _div},
+		{"mod", _mod},
+		{"sub", _sub},
+		{"pchar", _pchar},
+		{"pstr", _pstr},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{NULL, NULL}
+	};
 /**
  * call - call appropriate function
  * @tokens: pointer to array of tokens

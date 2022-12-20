@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * pint - prints the top for the stack
+ * _pint - prints the top for the stack
  * @stack: pointered to a stack
  * @n: line number that opcode is call at.
  */
-void pint(stack_t **stack, unsigned int n)
+void _pint(stack_t **stack, unsigned int n)
 {
 	if (!stack || !(*stack))
 	{
