@@ -36,7 +36,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#define INSTRUCTIONS { \
+static instruction_t ops[] = { \
 		{"push", push},\
 		{"pall", pall},\
 		{"pint", pint},\
